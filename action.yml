@@ -20,11 +20,11 @@ runs:
   - name: Check isort check
     shell: bash
     run: |
-      isort --check-only .
+      isort --check-only --recursive .
   - name: Unittest Checks
     shell: bash
     run: |
-      coverage run -m pytest 
+      coverage run -m pytest tests/
 branding:
   icon: activity
   color: green
