@@ -1,0 +1,26 @@
+name: "Python Package Build and Check"
+author: "namiyousef"
+description: "Check for formatting, linting, static type checkign and run tests"
+runs:
+  using: "composite"
+  steps:
+  - name: Build 
+    shell: bash
+    run: |
+      python -m pip install .
+      python -m pip install .[test]
+  - name: Link with flake8
+    shell: bash
+    run: |
+      flake8
+  - name: Format with black
+    shell: bash
+    run: |
+      black --check
+  - name: Check with isort
+    shell: bash
+    run: |
+      isort
+branding:
+  icon: activity
+  color: green
