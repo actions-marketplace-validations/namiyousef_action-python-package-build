@@ -20,7 +20,7 @@ runs:
   - name: Check isort check
     shell: bash
     run: |
-      isort --check-only --recursive .
+      isort --check-only .
   - name: Unittest Checks
     shell: bash
     run: |
